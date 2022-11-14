@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading">자바스크립트</h1>
+    <p id="text">위 텍스트 클릭</p>
+    <p id="confirm_test">확인 창 출력 테스트</p>
+    <p id="prompt_test">프롬프트 테스트</p>
+
+    <!-- 웹 문서 안에 script 태그로 자바스크립트 작성하기 -->
+    <!-- 웹 문서의 요소를 제어함 -->
+    <!-- 이미지나 텍스트를 모두 표시한 후에 실행 -->
+    <script>
+        var heading = document.querySelector('#heading');
+        heading.onclick = function () {
+            heading.style.color = "red";
+        }
+    </script>
+
+    <!-- 외부 스크립트 사용하기 (JS 파일) -->
+    <script src="../vanilla_js/study.js"></script>
+
+
+
+</body>
+
+</html>
