@@ -6,5 +6,11 @@ let let_first = 10;
     console.log(`In let_second ${let_second}`);
 }
 console.log(`Out let_first ${let_first}`);
-console.log(`Out let_second ${let_second}`);
+// console.log(`Out let_second ${let_second}`); // Error
 
+// check type of
+console.log(`typeof let_first : ${typeof let_first}`);
+let_first = "good";
+console.log(`typeof let_first : ${typeof let_first}`);
+
+console.log();
