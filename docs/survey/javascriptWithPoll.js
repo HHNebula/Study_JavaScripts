@@ -73,6 +73,7 @@ let printResult = (qusetionsList, exampleList, inputs) => {
         for (let example of exampleList) {
             if (inputs[count] == example.order) {
                 console.log(`(${example.order}) ${example.example}\n`);
+                break;
             }
         }
         count++;
