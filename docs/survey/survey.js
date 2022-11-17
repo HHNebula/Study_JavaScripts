@@ -17,7 +17,7 @@ let answersByQuestion = [
     [1, 2, 3],
     [1, 2, 3, 4],
     [1, 2],
-    [1, 2, 3, 4],
+    [1, 2, 3, 4, 5],
     [1, 2, 3]
 ]
 
@@ -31,17 +31,46 @@ let answers =
     5: "매우 그렇다"
 }
 
-console.log(`${answers[1]}`); // 이건 되는데
-
-let printServey = (questions, answersByQuestion, answers) => {
-    let count = 0; // 반복 횟수
-    for (let question of questions) {
-        console.log(`${question}`) // 문제를 뿌리고
-        for (let answer of answersByQuestion[count]) {
-            console.log(`(${answer}) ${answers[answer]}`); // 이건 왜 안되지...
-        }
-        count++;
+// 설문지 및 사용자 응답을 출력하는 Function
+let printServey = (questions, answersByQuestion, answers, inputs) => {
+    for (let idx = 0; idx < questions.length; idx++) {
+        printQuestion(questions, idx);
+        printAnswersByQuestion(answersByQuestion, answers, idx);
+        printInput(inputs, idx);
+        console.log("");
     }
 }
 
-printServey(questions, answersByQuestion);
+// 문제를 출력하는 Function
+let printQuestion = (questions, idx) => {
+    console.log(questions[idx]);
+}
+
+// 문제별 답항을 출력하는 Function
+let printAnswersByQuestion = (answersByQuestion, answers, idx) => {
+    for (let answer of answersByQuestion[idx]) {
+        console.log(`(${answer}) ${answers[answer]}`);
+    }
+}
+
+// 입력을 출력하는 Function
+let printInput = (inputs, idx) => {
+    console.log(`답) ${inputs[idx]}`);
+}
+
+// 설문지 응답 결과를 출력하는 Function
+let printResult = (questions, answers, inputs) => {
+    for (let idx = 0; idx < questions.length; idx++) {
+        printQuestion(questions, idx);
+        matchAnswer(answers, inputs[idx]);
+        console.log("");
+    }
+}
+
+// 입력을 응답항목으로 매칭해주는 Function
+let matchAnswer = (answers, input) => {
+    console.log(`답) ${answers[input]}`);
+}
+
+printServey(questions, answersByQuestion, answers, inputs);
+printResult(questions,answers,inputs);
