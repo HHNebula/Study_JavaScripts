@@ -13,6 +13,12 @@ for (let car of cars) {
     console.log(`${car}`)
 }
 
+cars.forEach((element) => { console.log(element); });
+
+let carConsolelog = car => console.log(car);
+
+cars.forEach(carConsolelog);
+
 // << !! ------------------------------- !! >>
 
 const array1 = ['a', 'b', 'c'];

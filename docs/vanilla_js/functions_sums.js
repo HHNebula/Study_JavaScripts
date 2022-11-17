@@ -12,3 +12,15 @@ function totalSum(numbers) {
 let numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 let answer = totalSum(numbers);
 console.log(answer);
+
+// 가변 인자로 처리
+function sumTotal(...numbers) {
+    let answer = 0;
+    let sumNumber = num => {
+        answer += num
+    }
+    numbers.forEach(sumNumber)
+    return answer;
+}
+
+console.log(sumTotal(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));

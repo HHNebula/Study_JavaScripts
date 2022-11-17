@@ -28,3 +28,25 @@ let calculateSumSecond = (num1, num2) => {
 }
 
 console.log(calculateSumSecond(1, calculateSum(1, 2)));
+
+// Rest Parameters // 가변 길이 파라메터
+function printRestParams(...args) {
+    let restParam = arg => {
+        console.log(`arg : ${arg}`)
+    }
+
+    args.forEach(restParam);
+}
+
+printRestParams(2, 4, 5);
+
+function sumTotal(...numbers) {
+    let answer = 0;
+    let sumNumber = num => {
+        answer += num
+    }
+    numbers.forEach(sumNumber)
+    return answer;
+}
+
+console.log(sumTotal(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
