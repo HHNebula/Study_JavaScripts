@@ -73,4 +73,4 @@ let matchAnswer = (answers, input) => {
 }
 
 printServey(questions, answersByQuestion, answers, inputs);
-printResult(questions,answers,inputs);
+printResult(questions, answers, inputs);
