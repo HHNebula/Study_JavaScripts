@@ -7,3 +7,26 @@ for (let i = 0; i < animals.length; i++) {
 for (let i of animals) {
     console.log(i);
 }
+
+const cars = ["Avante", "Sonata", "Granger", "Tussan", "Santafe"]
+for (let car of cars) {
+    console.log(`${car}`)
+}
+
+// << !! ------------------------------- !! >>
+
+const array1 = ['a', 'b', 'c'];
+
+array1.forEach(element => console.log(element));
+
+// Arrow Function
+let arrowFunction = element => console.log(element)
+
+array1.forEach(arrowFunction);
+
+// Nomal Function
+function nomalFunction(element) {
+    console.log(element);
+}
+
+array1.forEach(nomalFunction);
