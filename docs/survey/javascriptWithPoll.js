@@ -78,6 +78,7 @@ let printExample = (exampleList, exampleUid) => {
     });
 }
 
+// 문항별 사용자 응답 내용을 출력하기 위한 Function
 let printResult = (qusetionsList, exampleList, inputs) => {
     console.log("-------------------- 설문자 선택 --------------------");
 
