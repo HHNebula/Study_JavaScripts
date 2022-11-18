@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Index</h3>
+
+    <h3 onclick="alert('alert window !')">alert</h3>
+    <h3 onclick="confirm('confirm window !')">confirm</h3>
+    <h3 onclick="prompt('prompt window !')">prompt</h3>
+    <h3 onclick="window.close()()">closer</h3>
+    <script>
+        const animals = ["dog", "cat", "bird", "fish", "lizard"];
+
+        for (let i = 0; i < animals.length; i++) {
+            console.log(`${i}번 동물 : ${animals[i]}`)
+        }
+
+        for (let i of animals) {
+            console.log(i);
+        }
+
+        const cars = ["Avante", "Sonata", "Granger", "Tussan", "Santafe"]
+        for (let car of cars) {
+            console.log(`${car}`)
+        }
+    </script>
+</body>
+
+</html>
