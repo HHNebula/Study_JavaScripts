@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viemode Change</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>On Click</h1>
+    <input type="button" value="Night" onclick="">
+    <input type="button" value="Day" onclick="">
+    <input type="button" value="Hi" onclick="alert('Hi')">
+    <ul>
+        <li>사용자와의 상호작용을 위한 Java Script</li>
+        <li>웹 브라우저는 한번 화면에 출력되면 스스로 변경할 수 없다.(정적)</li>
+        <li>자바스크립트는 HTML을 제어하는 언어이다.</li>
+        <li>즉 자바스크립트는 HTML을 동적으로 만들어주는 언어라고 할 수 있다.</li>
+    </ul>
+
+    <h3>HTML 과 JS의 만남</h3>
+    <ul>
+        <li><strong>script 태그</strong><br>스크립트 태그 안에 적힌 내용은 브라우저가 자바스크립트로 해석</li>
+        <li><strong>일반 태그의 자바스크립트 속성</strong><br>브라우저가 자바스크립트 관련 속성을 만나면 내용을 기억함, 이벤트가 일어나면 동작<br>onclick, onchanged 등등
+        </li>
+    </ul>
+
+    <h3>onchanged 속성</h3>
+    <input type="text" onchange="alert('changed')">
+
+    <h3>onkeydown 속성</h3>
+    <input type="text" onkeydown="alert('key down!')">
+
+    <script>
+        document.write("Hello World!");
+    </script>
+</body>
+
+</html>
