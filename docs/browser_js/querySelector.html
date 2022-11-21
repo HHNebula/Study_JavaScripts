@@ -39,8 +39,10 @@
 
         // .list .item 각각 출력 
         let lists = document.querySelectorAll(".list");
-        lists.forEach(function(list) {
-            console.log("==== print ====");
+        lists.forEach(function (list) {
+            console.log("==== print list ====");
+            console.log(list);
+            console.log("==== print item ====");
             let items = list.querySelectorAll(".item");
             items.forEach(element => {
                 console.log(element);
