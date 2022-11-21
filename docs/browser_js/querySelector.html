@@ -40,11 +40,12 @@
         // .list .item 각각 출력 
         let lists = document.querySelectorAll(".list");
         lists.forEach(function(list) {
+            console.log("==== print ====");
             let items = list.querySelectorAll(".item");
             items.forEach(element => {
                 console.log(element);
             });
-        })
+        });
     </script>
 </body>
 
