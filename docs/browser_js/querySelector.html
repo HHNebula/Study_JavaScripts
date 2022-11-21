@@ -37,8 +37,12 @@
             console.log(element)
         );
 
-        // 모든 list class 밑의 item class 출력하기 
-        let items = document.querySelectorAll(".list > .item");
+        // .list .item 각각 출력 
+        let lists = document.querySelectorAll(".list");
+        lists.forEach(element => 
+            console.log(element)
+        );
+        let items = document.querySelectorAll(".item");
         items.forEach(element => 
             console.log(element)
         );
