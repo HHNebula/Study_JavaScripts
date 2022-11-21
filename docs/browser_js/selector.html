@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Selectors</h3>
+    <h3 id="selector">id = selector</h3>
+    
+    <p id="title">DOM</p>
+    <button id="btn">Click Me</button>
+    <ul class="list">
+        <li class="item">Apple</li>
+        <li class="item">Azue</li>
+        <li class="item">Samsung</li>
+        <li class="item">IBM</li>
+    </ul>
+    <ul class="list">
+        <li class="item">Banana</li>
+        <li class="item">Berry</li>
+        <li class="item">Melon</li>
+    </ul>
+    <a id="google" href="https://www.google.com">Google</a>
+
+
+    <script>
+        // let elementById = document.getElementById("selector");
+        // elementById.innerHTML = "<b>Change selector</b>";
+
+        // Class 는 복수형
+        // let elementsByClass = document.getElementsByClassName("list");
+        // console.log(`${elementsByClass}`);
+
+        // 태그로는 잘 가져오지 않음
+        // let elementsByTagName = document.getElementsByTagName("button");
+        // console.log(`${elementsByTagName}`);
+
+        // 쿼리 셀렉터
+        // let queryTitle = document.querySelector("#title");
+        // queryTitle.innerHTML = "query title!";
+
+        // 쿼리 셀렉터
+        // let queryItems = document.querySelectorAll(".item");
+        // let queryItem = document.querySelector(".item");
+        // let queryLists = document.querySelectorAll(".list");
+        // let queryList = document.querySelector(".list");
+
+        // 쿼리 셀렉터로 body 내 모든 형제 태그 출력해보기
+        let bodyBroder = document.querySelectorAll("body > *");
+        bodyBroder.forEach((element, bodyBroder) => {
+            console.log(element);
+        });
+
+        // .list 의 .item 각각 출력해보기
+        let items = document.querySelectorAll(".item");
+        items.forEach(function(item) {
+            console.log(item);
+        });
+        
+        // let titleById = document.getElementById("title");
+        // titleById.innerHTML = "Title By Id";
+    </script>
+</body>
+
+</html>
