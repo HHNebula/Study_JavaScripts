@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h3>
         Selectors
@@ -31,15 +33,16 @@
     <script>
         // body 태그 안에있는 모든 형제 태그 출력하기
         let broders = document.querySelectorAll("body > *");
-        broders.forEach((element, broders) => {
-            console.log(element);
-        });
+        broders.forEach(element =>
+            console.log(element)
+        );
 
         // 모든 item class 출력하기 
         let items = document.querySelectorAll(".item");
-        items.forEach((element, items) => {
-            console.log(element);
-        });
+        items.forEach(element => 
+            console.log(element)
+        );
     </script>
 </body>
+
 </html>
