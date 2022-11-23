@@ -52,59 +52,39 @@ const answers = [
     { questions_uid: "Q5", example_uid: "E3" },
 ];
 
-let idx = 0;
+let queryNextBtn = document.querySelector("#nextBtn"); // 다음 버튼
+let queryPervBtn = document.querySelector("#prevBtn"); // 이전 버튼
+let idx = 0; // 출력된 문항 저장용
+print(); // 설문 출력
 
-let queryNextBtn = document.querySelector("#nextBtn");
-let queryPervBtn = document.querySelector("#prevBtn");
 
-(function () { // 즉시 적용 함수
-    let queryQuestion = document.querySelector(".surveyBox > .question");
-    queryQuestion.innerHTML = questions_list[idx].order + ". " + questions_list[idx].question;
-    let queryAnswer = document.querySelector(".surveyBox > .answer");
-    answers.forEach(answersElement => {
-        if (answersElement.questions_uid == questions_list[idx].questions_uid) {
-            example_list.forEach(exampleElement => {
-                if (answersElement.example_uid == exampleElement.example_uid) {
-                    let radio = `<input type="radio" name="answer" id="radio${exampleElement.order}"></input>`
-                    let label = `<label for="radio">(${exampleElement.order})${exampleElement.example}</label><br>`;
-                    queryAnswer.innerHTML += radio + label;
-                }
-            });
-        }
-    });
-}());
-
+// 다음 버튼 클릭 시 발동
 function printNextQuestion() {
-    if (idx == 4) {
+    if (idx == 4) { // 문항이 최대라면 동작하지 않음
         return;
     }
-    idx++;
-    let queryQuestion = document.querySelector(".surveyBox > .question");
-    queryQuestion.innerHTML = questions_list[idx].order + ". " + questions_list[idx].question;
-    let queryAnswer = document.querySelector(".surveyBox > .answer");
-    queryAnswer.innerHTML = "";
-    answers.forEach(answersElement => {
-        if (answersElement.questions_uid == questions_list[idx].questions_uid) {
-            example_list.forEach(exampleElement => {
-                if (answersElement.example_uid == exampleElement.example_uid) {
-                    let radio = `<input type="radio" name="answer" id="radio${exampleElement.order}"></input>`
-                    let label = `<label for="radio">(${exampleElement.order})${exampleElement.example}</label><br>`;
-                    queryAnswer.innerHTML += radio + label;
-                }
-            });
-        }
-    });
+    idx++; // 인덱스 증가 후
+    print(); // 출력 함수 호출
 }
 
+// 이전 버튼 클릭 시 발동
 function printPrevQuestion() {
-    if (idx == 0) {
+    if (idx == 0) { // 문항이 최소라면 동작하지 않음
         return;
     }
-    idx--;
+    idx--; // 인덱스 감소 후
+    print(); // 출력 함수 호출
+}
+
+// 설문 문항과 응답 항목 출력 함수
+function print() {
+    // 1. 인덱스 값을 통해 문항을 출력함
     let queryQuestion = document.querySelector(".surveyBox > .question");
     queryQuestion.innerHTML = questions_list[idx].order + ". " + questions_list[idx].question;
+
+    // 2. 출력된 문항에 맞는 응답 항목을 출력함
     let queryAnswer = document.querySelector(".surveyBox > .answer");
-    queryAnswer.innerHTML = "";
+    queryAnswer.innerHTML = ""; // 항목 초기화
     answers.forEach(answersElement => {
         if (answersElement.questions_uid == questions_list[idx].questions_uid) {
             example_list.forEach(exampleElement => {
