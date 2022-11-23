@@ -1,0 +1,9 @@
+.surveyBtn {
+    background-color: green;
+    color: white;
+    font-size: medium;
+    width: 80px;
+    height: 40px;
+    border: 0px;
+    border-radius: 10%;
+}
