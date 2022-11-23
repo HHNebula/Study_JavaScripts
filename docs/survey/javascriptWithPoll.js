@@ -92,7 +92,7 @@ function print() {
             example_list.forEach(exampleElement => {
                 if (answersElement.example_uid == exampleElement.example_uid) {
                     let radio = `<input type="radio" name="answer" id="radio${exampleElement.order}"></input>`
-                    let label = `<label for="radio">(${exampleElement.order})${exampleElement.example}</label><br>`;
+                    let label = `<label for="radio">(${exampleElement.order}) ${exampleElement.example}</label><br>`;
                     queryAnswer.innerHTML += radio + label;
                 }
             });
