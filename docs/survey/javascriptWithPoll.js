@@ -61,6 +61,7 @@ print(); // 설문 출력
 // 다음 버튼 클릭 시 발동
 function printNextQuestion() {
     if (idx == 4) { // 문항이 최대라면 동작하지 않음
+        alert("다음 항목이 없습니다.");
         return;
     }
     idx++; // 인덱스 증가 후
@@ -70,6 +71,7 @@ function printNextQuestion() {
 // 이전 버튼 클릭 시 발동
 function printPrevQuestion() {
     if (idx == 0) { // 문항이 최소라면 동작하지 않음
+        alert("이전 항목이 없습니다.");
         return;
     }
     idx--; // 인덱스 감소 후
@@ -78,7 +80,7 @@ function printPrevQuestion() {
 
 // 설문 문항과 응답 항목 출력 함수
 function print() {
-    // 1. 인덱스 값을 통해 문항을 출력함
+    // 1. 인덱스 값을 통해 문항을 출력함 
     let queryQuestion = document.querySelector(".surveyBox > .question");
     queryQuestion.innerHTML = questions_list[idx].order + ". " + questions_list[idx].question;
 
