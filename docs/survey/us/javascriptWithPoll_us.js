@@ -101,3 +101,44 @@ for (poll of polls) {
     });
 }
 console.log();
+
+// Event handlers
+// Next 클릭 시 순서에 맞춰 설문 표시
+let queryNext = document.querySelector("#next");
+queryNext.addEventListener("click", setPollContent);
+
+let queryprev = document.querySelector("#prev");
+queryprev.addEventListener("click", setPollContentPrev);
+
+let index = -1;
+function setPollContent() {
+    index++;
+    if (index > 4) {
+        alert("다음 항목이 없습니다.");
+        index = 4;
+    }
+    let queryContent = document.querySelector("#poll-contents");
+    let desc = `<div>${index + 1}. ${getQuestionByUid(
+        polls[index]["questions_uid"]
+    )}</div>`;
+    polls[index]["answer_uids"].forEach((answer_uid, index) => {
+        desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
+    });
+    queryContent.innerHTML = desc;
+}
+
+function setPollContentPrev() {
+    index--;
+    if (index < 0) {
+        alert("이전 항목이 없습니다.");
+        index = 0;
+    }
+    let queryContent = document.querySelector("#poll-contents");
+    let desc = `<div>${index + 1}. ${getQuestionByUid(
+        polls[index]["questions_uid"]
+    )}</div>`;
+    polls[index]["answer_uids"].forEach((answer_uid, index) => {
+        desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
+    });
+    queryContent.innerHTML = desc;
+}
