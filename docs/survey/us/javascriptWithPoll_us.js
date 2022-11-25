@@ -37,11 +37,11 @@ const answer_list = [
 const questions_answers = [
     { questions_uid: "Q1", answer_uid: "E1" },
     { questions_uid: "Q1", answer_uid: "E2" },
-    { questions_uid: "Q1", answer_uid: "E3" },
+    // { questions_uid: "Q1", answer_uid: "E3" },
     { questions_uid: "Q2", answer_uid: "E1" },
     { questions_uid: "Q2", answer_uid: "E2" },
     { questions_uid: "Q2", answer_uid: "E3" },
-    { questions_uid: "Q2", answer_uid: "E4" },
+    // { questions_uid: "Q2", answer_uid: "E4" },
     { questions_uid: "Q3", answer_uid: "E1" },
     { questions_uid: "Q3", answer_uid: "E2" },
     { questions_uid: "Q4", answer_uid: "E1" },
@@ -61,11 +61,11 @@ let questions = []; // 내부 묶음
 //1차 방식 : [Q1,Q2,Q3,Q4,Q5]
 //2차 방식 : Array Of Array [[Q1, E1, E2],[Q2, E1, E2, E3]...]]
 
-for (let idx = 0; idx < questions_answers.length; idx++) {
-    if (question_compare != questions_answers[idx]["questions_uid"]) {
-        if (questions.length > 0) {
-            polls.push(questions);
-            questions = [];
+for (let idx = 0; idx < questions_answers.length; idx++) { // questions_answers.length = 15
+    if (question_compare != questions_answers[idx]["questions_uid"]) { // emt != Q1
+        if (questions.length > 0) { // 처음 나온게 아니라면
+            polls.push(questions); // polls 에 Q1을 넣고
+            questions = []; // 초기화
         }
         questions.push(`${questions_answers[idx]["questions_uid"]}`);
         questions.push(`${questions_answers[idx]["answer_uid"]}`);
@@ -80,4 +80,24 @@ for (let idx = 0; idx < questions_answers.length; idx++) {
     }
 }
 
-console.log(`${polls}`);
+//출력
+//3차 방식:object in Array
+function getQuestionByUid(questions_uid) {
+    let questions_desc;
+    for (question_item of questions_list) {
+        if (question_item["questions_uid"] >= questions_uid) {
+            questions_desc = question_item["question"];
+        }
+    }
+    return questions_desc;
+}
+
+for (poll of polls) {
+    console.log(`${getQuestionByUid(poll["questions_uid"])}`);
+    //console.log(`${poll["questions_uid"]}`); // == polls[idx]
+    let answer_uids = poll["answer_uids"];
+    answer_uids.forEach((answer_uid, index) => {
+        console.log(`${index + 1}. ${answer_uid}`);
+    });
+}
+console.log();
