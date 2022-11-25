@@ -96,8 +96,8 @@ for (poll of polls) {
     console.log(`${getQuestionByUid(poll["questions_uid"])}`);
     //console.log(`${poll["questions_uid"]}`); // == polls[idx]
     let answer_uids = poll["answer_uids"];
-    answer_uids.forEach((answer_uid, index) => {
-        console.log(`${index + 1}. ${answer_uid}`);
+    answer_uids.forEach((answer_uid, idx) => {
+        console.log(`${idx + 1}. ${answer_uid}`);
     });
 }
 console.log();
@@ -110,35 +110,35 @@ queryNext.addEventListener("click", setPollContent);
 let queryprev = document.querySelector("#prev");
 queryprev.addEventListener("click", setPollContentPrev);
 
-let index = -1;
+let idx = -1;
 function setPollContent() {
-    index++;
-    if (index > 4) {
+    idx++;
+    if (idx > 4) {
         alert("다음 항목이 없습니다.");
-        index = 4;
+        idx = 4;
     }
     let queryContent = document.querySelector("#poll-contents");
-    let desc = `<div>${index + 1}. ${getQuestionByUid(
-        polls[index]["questions_uid"]
+    let desc = `<div>${idx + 1}. ${getQuestionByUid(
+        polls[idx]["questions_uid"]
     )}</div>`;
-    polls[index]["answer_uids"].forEach((answer_uid, index) => {
-        desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
+    polls[idx]["answer_uids"].forEach((answer_uid, idx) => {
+        desc += `<div><input type = "radio" id = "id${idx}" name = "answer"><label for = "id${idx}"> (${idx + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
     });
     queryContent.innerHTML = desc;
 }
 
 function setPollContentPrev() {
-    index--;
-    if (index < 0) {
+    idx--;
+    if (idx < 0) {
         alert("이전 항목이 없습니다.");
-        index = 0;
+        idx = 0;
     }
     let queryContent = document.querySelector("#poll-contents");
-    let desc = `<div>${index + 1}. ${getQuestionByUid(
-        polls[index]["questions_uid"]
+    let desc = `<div>${idx + 1}. ${getQuestionByUid(
+        polls[idx]["questions_uid"]
     )}</div>`;
-    polls[index]["answer_uids"].forEach((answer_uid, index) => {
-        desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
+    polls[idx]["answer_uids"].forEach((answer_uid, idx) => {
+        desc += `<div><input type = "radio" id = "id${idx}" name = "answer"><label for = "id${idx}"> (${idx + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
     });
     queryContent.innerHTML = desc;
 }
