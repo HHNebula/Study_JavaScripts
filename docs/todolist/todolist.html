@@ -77,6 +77,16 @@
                 <button class="todo-input-btn">Add</button>
             </div>
             <div class="todo-list-box">
+                <div class="todo">
+                    <span class="todo-text">abcd</span>
+                    <span class="material-symbols-outlined">delete</span>
+                    <span class="material-symbols-outlined">favorite_border</span>
+                </div>
+                <div class="todo">
+                    <span class="todo-text">abcd</span>
+                    <span class="material-symbols-outlined">delete</span>
+                    <span class="material-symbols-outlined">favorite_border</span>
+                </div>
             </div>
         </div>
     </div>
@@ -113,12 +123,12 @@
             if (event.target.innerHTML == "delete") {
                 event.target.parentElement.remove();
             }
-            if (event.target.innerHTML == "favorite_border") {
-                event.target.innerHTML = "favorite";
+            if (event.target.innerHTML == "Thumb Down") {
+                event.target.innerHTML = "Thumb Up";
                 return;
             }
-            if (event.target.innerHTML == "favorite") {
-                event.target.innerHTML = "favorite_border";
+            if (event.target.innerHTML == "Thumb Up") {
+                event.target.innerHTML = "Thumb Down";
                 return;
             }
         });
