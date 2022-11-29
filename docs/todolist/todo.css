@@ -1,3 +1,4 @@
+/* 공통 속성 */
 html {
     height: 100%;
 }
@@ -6,7 +7,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    background-color: #F5F5F5;
+    background-color: #fff;
     min-height: 100%;
 }
 
@@ -16,16 +17,24 @@ body {
     min-width: 600px;
 }
 
+button {
+    background-color: #fff;
+    border: 0;
+}
+
+/* 타이틀 속성 */
 .todo-title {
     padding: 2rem;
     text-align: center;
-    color: rosybrown;
+    color: crimson;
     font-size: 5rem;
 }
 
+
+/* 리스트 상단부 속성 */
 .todo-box {
     background-color: white;
-    border: 1px solid #ddd;
+    border: 1px solid crimson;
 }
 
 .todo-input-box {
@@ -33,14 +42,9 @@ body {
     flex-wrap: nowrap;
     flex-direction: row;
     height: 3rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid crimson;
     justify-content: flex-start;
     align-items: center;
-}
-
-button {
-    background-color: transparent;
-    border: 0;
 }
 
 .complete-all-btn {
@@ -57,15 +61,22 @@ button {
 }
 
 .complete-all-btn.checked {
-    color: green
+    color: crimson
 }
 
 .todo-input {
-    width: 80%;
-    text-align: center;
-    border: 0;
+    width: 100%;
+    text-align: left;
+    border: 0px;
     outline: none;
-    font-size: 1.3rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+/* 리스트 내부 속성 */
+.todo-list {
+    margin: 1rem;
+    padding: 0rem;
 }
 
 .todo-item {
@@ -76,7 +87,7 @@ button {
     justify-content: space-between;
     align-items: center;
     height: 3rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid lightpink;
 }
 
 .todo-item:hover .delBtn {
@@ -97,11 +108,11 @@ button {
 
 .todo-item.checked .checkbox {
     border: 2px solid darkgray;
-    color: green;
+    color: crimson;
 }
 
 .todo {
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 0 1rem;
     width: 80%;
 }
@@ -113,12 +124,13 @@ button {
 }
 
 .delBtn {
-    opacity: 1;
+    opacity: 0.2;
     width: 3rem;
     height: 3rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: lighter;
     cursor: pointer;
+    color: crimson;
 }
 
 .todo-bottom {
@@ -129,6 +141,14 @@ button {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    color: crimson;
+}
+
+.left-items,
+.clear-completed-btn {
+    width: 20%;
+    color: crimson;
+    font-size: 0.8rem;
 }
 
 .button-group {
@@ -137,18 +157,20 @@ button {
 }
 
 .button-group button {
-    border: 1px solid #eee;
+    border: 1px solid #fff;
     padding: 0.2rem 0.5rem;
     margin: 0 0.5rem;
     border-radius: 8px;
     cursor: pointer;
+    color: crimson;
 }
 
 .button-group button.selected {
-    border: 2px solid rosybrown;
+    border: 2px solid crimson;
     padding: 0.2rem 0.5rem;
     margin: 0 0.5rem;
     border-radius: 8px;
+    color: crimson;
 }
 
 .clear-completed-btn:hover {
@@ -166,8 +188,16 @@ button {
     margin: 0;
 }
 
+.help p:first-child {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
 p.info {
-    margin-top: 1.5rem;
+    margin: 0.3rem;
     text-align: center;
-    color: #ccc;
+    color: crimson;
+    font-size: 0.8rem;
 }

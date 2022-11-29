@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>TO-DO-LIST</title>
+    <style>
+        .todo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .todo-title {
+            background-color: lightseagreen;
+            width: 80%;
+            font-size: 3rem;
+            padding: 1rem;
+            margin: 1rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        .todo-input-box {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .todo-input,
+        .todo-input-btn {
+            height: 2rem;
+            border-radius: 0.5rem;
+            margin: 1rem;
+        }
+
+        .todo-input {
+            border: 1px solid gray;
+            padding: 1rem;
+            width: 50rem;
+        }
+
+        .todo-input-btn {
+            width: 8rem;
+            height: 4rem;
+            cursor: pointer;
+            font-size: large;
+            border: 0px;
+            background-color: lightseagreen;
+            color: #fff;
+        }
+
+        .todo-list-box {
+            padding: 0.5rem 2rem;
+            list-style-type: none;
+            align-items: center;
+        }
+
+        .material-symbols-outlined {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="todo-wrapper">
+        <div class="todo-title">TO DO LIST</div>
+        <div class="todo-box">
+            <div class="todo-input-box">
+                <input type="text" class="todo-input" placeholder="Add a new task">
+                <button class="todo-input-btn">Add</button>
+            </div>
+            <div class="todo-list-box">
+                <div class="todo">
+                    <span class="todo-text">abcd</span>
+                    <span class="material-symbols-outlined">delete</span>
+                    <span class="material-symbols-outlined">favorite_border</span>
+                </div>
+                <div class="todo">
+                    <span class="todo-text">abcd</span>
+                    <span class="material-symbols-outlined">delete</span>
+                    <span class="material-symbols-outlined">favorite_border</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let queryInputBox = document.querySelector(".todo-input");
+        let queryAddBtn = document.querySelector(".todo-input-btn");
+        let queryTodoList = document.querySelector(".todo-list-box");
+
+        queryInputBox.addEventListener("keypress", event => {
+            if (event.key == "Enter") {
+                input();
+            }
+        });
+
+        queryAddBtn.addEventListener("click", event => {
+            input();
+        });
+
+        let input = () => {
+            if (queryInputBox.value == "") {
+                alert("비어있는 TO-DO 목록을 추가할 수 없습니다.\n내용을 입력해 주세요.");
+                return;
+            }
+            let todo = `<div class="todo">
+                    <span class="todo-text">${queryInputBox.value}</span>
+                    <span class="material-symbols-outlined">delete</span>
+                    <span class="material-symbols-outlined">favorite_border</span>
+                </div>`
+            queryTodoList.insertAdjacentHTML("afterbegin", todo);
+            queryInputBox.value = "";
+        }
+
+        queryTodoList.addEventListener("click", (event) => {
+            if (event.target.innerHTML == "delete") {
+                event.target.parentElement.remove();
+            }
+            if (event.target.innerHTML == "favorite_border") {
+                event.target.innerHTML = "favorite";
+                return;
+            }
+            if (event.target.innerHTML == "favorite") {
+                event.target.innerHTML = "favorite_border";
+                return;
+            }
+        });
+    </script>
+</body>
+
+</html>

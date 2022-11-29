@@ -1,7 +1,7 @@
-const todoInputElem = document.querySelector('.todo-input');
-const todoListElem = document.querySelector('.todo-list');
-const completeAllBtnElem = document.querySelector('.complete-all-btn');
-const leftItemsElem = document.querySelector('.left-items')
+const todoInputElem = document.querySelector('.todo-input'); // 인풋 텍스트 박스
+const todoListElem = document.querySelector('.todo-list'); // 입력 시 추가될 리스트
+const completeAllBtnElem = document.querySelector('.complete-all-btn'); // 전체 선택 버튼
+const leftItemsElem = document.querySelector('.left-items') // 달성하지 못한 리스트의 개수
 const showAllBtnElem = document.querySelector('.show-all-btn');
 const showActiveBtnElem = document.querySelector('.show-active-btn');
 const showCompletedBtnElem = document.querySelector('.show-completed-btn');
@@ -34,7 +34,7 @@ const getActiveTodos = () => {
 
 const setLeftItems = () => {
     const leftTodos = getActiveTodos()
-    leftItemsElem.innerHTML = `${leftTodos.length} items left`
+    leftItemsElem.innerHTML = `${leftTodos.length} 개 남음`
 }
 
 const completeAll = () => {
@@ -204,7 +204,12 @@ const onClickShowTodosType = (e) => {
 const init = () => {
     todoInputElem.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-            appendTodos(e.target.value); todoInputElem.value = '';
+            if(todoInputElem.value == "") {
+                alert("비어있는 TO-DO 목록을 추가할 수 없습니다.\n내용을 입력해 주세요.");
+                return;
+            }
+            appendTodos(e.target.value);
+            todoInputElem.value = '';
         }
     })
     completeAllBtnElem.addEventListener('click', onClickCompleteAll);
