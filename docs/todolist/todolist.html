@@ -77,16 +77,6 @@
                 <button class="todo-input-btn">Add</button>
             </div>
             <div class="todo-list-box">
-                <div class="todo">
-                    <span class="todo-text">abcd</span>
-                    <span class="material-symbols-outlined">delete</span>
-                    <span class="material-symbols-outlined">favorite_border</span>
-                </div>
-                <div class="todo">
-                    <span class="todo-text">abcd</span>
-                    <span class="material-symbols-outlined">delete</span>
-                    <span class="material-symbols-outlined">favorite_border</span>
-                </div>
             </div>
         </div>
     </div>
@@ -112,8 +102,9 @@
             }
             let todo = `<div class="todo">
                     <span class="todo-text">${queryInputBox.value}</span>
+                    <div class="">
                     <span class="material-symbols-outlined">delete</span>
-                    <span class="material-symbols-outlined">favorite_border</span>
+                    <span class="material-symbols-outlined">thumb_up</span>
                 </div>`
             queryTodoList.insertAdjacentHTML("afterbegin", todo);
             queryInputBox.value = "";
@@ -122,13 +113,14 @@
         queryTodoList.addEventListener("click", (event) => {
             if (event.target.innerHTML == "delete") {
                 event.target.parentElement.remove();
-            }
-            if (event.target.innerHTML == "Thumb Down") {
-                event.target.innerHTML = "Thumb Up";
                 return;
             }
-            if (event.target.innerHTML == "Thumb Up") {
-                event.target.innerHTML = "Thumb Down";
+            if (event.target.innerHTML == "thumb_down") {
+                event.target.innerHTML = "thumb_up";
+                return;
+            }
+            if (event.target.innerHTML == "thumb_up") {
+                event.target.innerHTML = "thumb_down";
                 return;
             }
         });
