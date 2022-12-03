@@ -1,3 +1,7 @@
 body {
     padding: 1rem;
 }
+
+div > div {
+    border: 1px solid gray;
+}
