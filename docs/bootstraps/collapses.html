@@ -13,13 +13,15 @@
 <body>
     <div class="fs-3">Collapses</div>
     <div>
-        <button class="btn btn-primary">link</button>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse-target">link</a>
+        <button class="btn btn-primary" data-bs-target="#collapse-target">link</button>
     </div>
-    <div>
+    <div class="collapse" id="collapse-target">
         <div class="card card-body">
             모로코, 승부차기로 스페인 꺾고 첫 8강...'하무스 해트트릭' 포르투갈도 8강
         </div>
     </div>
+    <hr>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
