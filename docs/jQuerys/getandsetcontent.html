@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+        integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h3>Get And Set Content</h3>
+
+    <h3>Attributes</h3>
+    <div><a href="https://www.google.com/">Google</a></div>
+    <button id="btn_attr">Set Attributes</button>
+    <script>
+        $(function() {
+            $('#btn_attr').click(function() {
+                $('a').attr('href', 'https://openai.com');
+                $('a').text('Open ai')
+            });
+        });
+    </script>
+
+    <p>This is <b>Paragrap</b> element</p>
+    <div>input field : <input type="text" name="" id="ipt_value"></div>
+
+    <button id="show_btn_html">Show HTML</button>
+    <button id="show_btn_text">Show text</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#show_btn_html').click(function() {
+                alert($('p').html());
+            });
+            $('#show_btn_text').click(function() {
+                alert($('p').text());
+            });
+        });
+    </script>
+</body>
+
+</html>
